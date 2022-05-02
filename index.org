@@ -1,7 +1,6 @@
 #+title: Dividend Policy
 #+author: Matt Brigida, Ph.D.
-
-
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 
 * Dividends 
@@ -14,7 +13,6 @@ In general, any payment made directly from the corporation to shareholders is a 
 
 A corporation's Board of Directors sets its *dividend policy*.
 
- 
 
 * Making a Cash Dividend Payment
 
@@ -28,8 +26,6 @@ There are 4 steps in the payment of a cash dividend.
 
 **Step 4**: The dividends are actually paid on a set date.
 
- 
-
 
 * The Stock Price Around Ex-Dividend
 
@@ -40,8 +36,6 @@ Say a stock will go ex-dividend tomorrow.  It is trading for \$50 now, and will 
 -  No, the stock price will typically open the following day at about \$49, so adjust for the \$1 less that the firm has in cash.  In general, it may open at a price slightly different than \$49 due to the effect of taxes.
 
  
-
-
 * Interactive App
 
 The interactive app on the next slide will plot the opening and closing prices for your choice of stock, as well as the ex-dividend dates and the dividend amount. 
@@ -49,9 +43,6 @@ The interactive app on the next slide will plot the opening and closing prices f
 - You can zoom in on any time period by left-clicking the mouse and dragging over the interval.  
 
 Look at the relationship between the close on the day before the ex-dividend date and the open on the following date.  The open is, on average, below the close by the dividend amount. 
-
- 
-
 
 *
 

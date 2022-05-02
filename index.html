@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-05-02 Mon 18:58 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dividend Policy</title>
+<meta name="author" content="Matt Brigida, Ph.D." />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Dividend Policy</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org23a5fc0">1. Dividends</a></li>
+<li><a href="#org75f647d">2. Making a Cash Dividend Payment</a></li>
+<li><a href="#org4c5da7e">3. The Stock Price Around Ex-Dividend</a></li>
+<li><a href="#org05bc139">4. Interactive App</a></li>
+<li><a href="#org09c859c">5. Interactive App</a></li>
+<li><a href="#org830492f">6. </a></li>
+<li><a href="#orgd513127">7. Dividend Policy</a></li>
+<li><a href="#org00b3998">8. Why Dividend Policy May Matter</a></li>
+<li><a href="#org8907629">9. Why Dividend Policy May Matter</a></li>
+<li><a href="#orgca5d99a">10. Credits and Collaboration</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org23a5fc0" class="outline-2">
+<h2 id="org23a5fc0"><span class="section-number-2">1.</span> Dividends</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+In general, any payment made directly from the corporation to shareholders is a <b>dividend</b>.
+</p>
+
+<ul class="org-ul">
+<li>Often these are cash payments made from <b>earnings</b>.  If they are cash dividends from other sources than earnings (selling equipment, for example), they are referred to as <b>liquidating dividends</b> or as <b>distributions</b>.</li>
+
+<li>Dividends can also be paid in <b>stock</b>. A stock dividend increases the number of shares outstanding and does not represent a cash payment.</li>
+</ul>
+
+<p>
+A corporation's Board of Directors sets its <b>dividend policy</b>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org75f647d" class="outline-2">
+<h2 id="org75f647d"><span class="section-number-2">2.</span> Making a Cash Dividend Payment</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+There are 4 steps in the payment of a cash dividend.
+</p>
+
+<p>
+<b><b>Step 1</b></b>:  First, the dividend must be <b>declared</b>.  This date is important because the firm is not required to pay dividends.  However, once the dividend is declared by the Board of Directors, it becomes a liability of the firm.
+</p>
+
+<p>
+<b><b>Step 2</b></b>: An <b>ex-dividend</b> date is set by brokerage firms to ensure that the dividends are paid to the correct owners.  The date is two business days before the corporation's date of record, which is described in the next step. If you buy the stock on the <b>ex-dividend</b> date or later, you do not get the dividend.  If you bought the stock prior to the ex-date, and sold the stock on the ex-date you do get the dividend. 
+</p>
+
+<p>
+<b><b>Step 3</b></b>:  The corporation's date of record is the date at which the corporation determines the owners of its stock. This information is augmented by the broker's ex-date data when payments are paid.  So if you sold the stock on the ex-date, therefore not owning the stock on the date of record, you still receive the dividend payment.
+</p>
+
+<p>
+<b><b>Step 4</b></b>: The dividends are actually paid on a set date.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4c5da7e" class="outline-2">
+<h2 id="org4c5da7e"><span class="section-number-2">3.</span> The Stock Price Around Ex-Dividend</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Say a stock will go ex-dividend tomorrow.  It is trading for \$50 now, and will pay a \$1 dividend.  
+</p>
+
+<ul class="org-ul">
+<li>Could we earn free money by buying a stock for \$50 now, and selling the stock early on the ex-date tomorrow (hopefully for \$50), pocketing the dividend?</li>
+
+<li>No, the stock price will typically open the following day at about \$49, so adjust for the \$1 less that the firm has in cash.  In general, it may open at a price slightly different than \$49 due to the effect of taxes.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org05bc139" class="outline-2">
+<h2 id="org05bc139"><span class="section-number-2">4.</span> Interactive App</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The interactive app on the next slide will plot the opening and closing prices for your choice of stock, as well as the ex-dividend dates and the dividend amount. 
+</p>
+
+<ul class="org-ul">
+<li>You can zoom in on any time period by left-clicking the mouse and dragging over the interval.</li>
+</ul>
+
+<p>
+Look at the relationship between the close on the day before the ex-dividend date and the open on the following date.  The open is, on average, below the close by the dividend amount. 
+</p>
+
+<p>
+*
+</p>
+
+<p>
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(quantmod)
+library(dygraphs)
+  ## comp1 &lt;- read.csv("./tickers<sub>wo</sub><sub>dollars.txt</sub>", header = TRUE, sep = "|", stringsAsFactors = FALSE)
+  ## comp1 &lt;- data.frame(comp1$Symbol, comp1$Security.Name, stringsAsFactors = FALSE)
+  ## names(comp1) &lt;- c("symbol", "name")
+inputPanel(
+    ## selectizeInput("name1", label = "Type a Stock's Name", multiple = FALSE, choices = comp1$name)
+    textInput("name1", "Enter a Stock's Ticker", value = "BP")
+)
+renderDygraph({
+    ## valdate name -&#x2014;
+    validate(
+        need(input$name1 != "", "Enter a stock's ticker.")
+        )
+    ## ticker &lt;- comp1$symbol[comp1$name == input$name1]
+    ticker &lt;- input$name1
+</p>
+
+<p>
+D1 &lt;- getDividends(ticker, auto.assign = FALSE)
+prices &lt;- getSymbols(ticker, auto.assign = FALSE, src = 'google')
+</p>
+
+<p>
+    dygraph(cbind(Op(prices), Cl(prices))) %&gt;%
+        dyEvent(index(D1), as.numeric(D1), labelLoc = "bottom")
+})
+```
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org09c859c" class="outline-2">
+<h2 id="org09c859c"><span class="section-number-2">5.</span> Interactive App</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+In the following interactive app you can chart the dividend for any stock.  This will allow you to see the general trend in dividend payments, and the app also shows how dividends react to events and recessions.
+</p>
+
+<ul class="org-ul">
+<li>Look at the dividend for the `SPDR S&amp;P 500` (ticker: `SPY`).  Note that the general trend is an increase in dividend payment amount&#x2014;this is different from bonds whose payments are fixed.</li>
+
+<li>Also, note the decline in S&amp;P 500 dividends in the wake of the 2008 financial crises and recession.</li>
+
+<li>Looking at `BP p.l.c.'s` (ticker: `BP`) common stock dividend, you can see after the Gulf of Mexico spill, at the end of April 2010, BP's dividend dropped to \$0.  This highlights the fact that dividends do not have to be paid.</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org830492f" class="outline-2">
+<h2 id="org830492f"><span class="section-number-2">6.</span> </h2>
+<div class="outline-text-2" id="text-6">
+<p>
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+</p>
+
+<p>
+library(quantmod)
+library(highcharter)
+  ## comp &lt;- read.csv("./tickers<sub>wo</sub><sub>dollars.txt</sub>", header = TRUE, sep = "|", stringsAsFactors = FALSE)
+  ## comp &lt;- data.frame(comp$Symbol, comp$Security.Name, stringsAsFactors = FALSE)
+  ## names(comp) &lt;- c("symbol", "name")
+</p>
+
+<p>
+inputPanel(
+    ## selectizeInput("name", label = "Type a Stock's Name", multiple = FALSE, choices = comp$name)
+    textInput("name", "Enter a Stock's Ticker", value = "SPY")
+    )
+</p>
+
+<p>
+renderHighchart({
+    ## valdate name -&#x2014;
+    validate(
+        need(input$name != "", "Enter a stock's ticker symbol.")
+        )
+## ticker &lt;- comp$symbol[comp$name == input$name]
+    ticker2 &lt;- input$name
+</p>
+
+<p>
+    D &lt;- getDividends(ticker2, auto.assign = FALSE)
+    if( dim(D)[1] == 0 ){
+        ## dygraph(as.ts(0))
+        hchart(as.ts(0))
+    } else {
+        hchart(D)
+        }
+})
+</p>
+
+<p>
+```
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgd513127" class="outline-2">
+<h2 id="orgd513127"><span class="section-number-2">7.</span> Dividend Policy</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Does it matter if a firm pays a high dividend or low (or no) dividend?  The truth is we don't know.  There are compelling theoretical arguments that dividend policy is irrelevant.  However, practitioners tend to view dividend policy as important.
+</p>
+
+<ul class="org-ul">
+<li><b>Dividend Irrelevance</b>:  Imagine there're no taxes (it's easy if you try).  Then once a stock goes ex-dividend its price is lower than before it went ex-divided by exactly the same amount as the dividend.  So assuming prior to ex-dividend the stock's price is \$50, and after it is \$49.</li>
+
+<li>The questions is do you prefer \$50 in stock, or \$49 in stock and \$1 in cash?  There is no difference (assuming no behavioral preference for cash), and so paying the dividend is irrelevant.</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org00b3998" class="outline-2">
+<h2 id="org00b3998"><span class="section-number-2">8.</span> Why Dividend Policy May Matter</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<b>Taxes</b>:  In the above example we assumed no taxes.  
+</p>
+
+<ul class="org-ul">
+<li>However if there are taxes, then paying a dividend forces investors to pay taxes on that \$1.</li>
+
+<li>If the \$1 is retained by the firm, the investor can prefer to wait to sell the stock (thus indefinitely deferring the taxes paid on the \$1).  Additionally, dividends are often taxed higher than capital gain, worsening the tax implications of paying the cash dividend.</li>
+
+<li>Conversely, there are certain investors who receive favorable tax treatment for dividends.  First, some investors are tax exempt (such as pension funds).  Second, corporations who own stock in other corporations do not have to pay taxes on 70\% of the dividend payments received.  These investors would be happy owning high dividend-paying stock.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org8907629" class="outline-2">
+<h2 id="org8907629"><span class="section-number-2">9.</span> Why Dividend Policy May Matter</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Differing tax treatments lead to the <b>clientele hypothesis</b>, which says company's may target investor types through dividend policy.  If a firm would like corporate and pension fund investors, they can set a high dividend.  Alternatively, if they want individual investors, the firm can set a low (or no) dividend.  
+</p>
+
+<p>
+There are also <b>behavioral</b> reasons investors may demand high dividend-paying stocks, such as being able to receive income without selling stock.  Selling stock incurs transaction costs as well.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgca5d99a" class="outline-2">
+<h2 id="orgca5d99a"><span class="section-number-2">10.</span> Credits and Collaboration</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+Click the following links to see the [code](<a href="https://github.com/FinancialMarkets/5MinuteFinance/blob/master/Corporate_Finance/basic_financial_statements/basic_financial_statements.Rmd">https://github.com/FinancialMarkets/5MinuteFinance/blob/master/Corporate_Finance/basic_financial_statements/basic_financial_statements.Rmd</a>), [line-by-line contributions to this presentation](<a href="https://github.com/FinancialMarkets/5MinuteFinance/blame/master/Corporate_Finance/basic_financial_statements/basic_financial_statements.Rmd">https://github.com/FinancialMarkets/5MinuteFinance/blame/master/Corporate_Finance/basic_financial_statements/basic_financial_statements.Rmd</a>), and [all the collaborators who have contributed to 5-Minute Finance via GitHub](<a href="https://github.com/FinancialMarkets/5MinuteFinance/graphs/contributors">https://github.com/FinancialMarkets/5MinuteFinance/graphs/contributors</a>).
+</p>
+
+<p>
+Learn more about how to contribute [here](<a href="http://www.5minutefinance.org/how-to-contribute">http://www.5minutefinance.org/how-to-contribute</a>).
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Matt Brigida, Ph.D.</p>
+<p class="date">Created: 2022-05-02 Mon 18:58</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
